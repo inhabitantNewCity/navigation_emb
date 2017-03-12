@@ -1,0 +1,112 @@
+object HeaderFooterwithNavigation: THeaderFooterwithNavigation
+  Left = 0
+  Top = 0
+  Caption = 'HeaderFooter'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 384.000000000000000000
+    Size.Height = 475.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = None
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'TabItem1'
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'TabItem2'
+    end
+  end
+  object BottomToolBar: TToolBar
+    Align = Bottom
+    Anchors = [akLeft]
+    Position.Y = 519.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 2
+  end
+  object TopToolBar: TToolBar
+    Anchors = []
+    Size.Width = 384.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBarLabel: TLabel
+      Action = TitleAction
+      Align = Contents
+      Enabled = True
+      Size.Width = 384.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Visible = True
+    end
+    object btnBack: TSpeedButton
+      Action = PreviousTabAction
+      Align = MostLeft
+      Enabled = True
+      Size.Width = 65.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      Visible = True
+    end
+    object btnNext: TSpeedButton
+      Action = NextTabAction
+      Align = MostRight
+      Enabled = True
+      Position.X = 340.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'nexttoolbutton'
+      Visible = True
+    end
+  end
+  object ActionList1: TActionList
+    Left = 144
+    Top = 224
+    object TitleAction: TControlAction
+      Category = 'Tab'
+      Text = 'TitleAction'
+      OnUpdate = TitleActionUpdate
+    end
+    object NextTabAction: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object PreviousTabAction: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+end
