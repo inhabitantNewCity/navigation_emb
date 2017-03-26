@@ -6,8 +6,8 @@
 #endif
 class Algorithm : public TCppInterfacedObject<TProc>{
 protected:
-	TQueue<T>* queue;
+	TQueue<MultiVector*>* queue;
 public:
-	TCppSync(TQueue<MultiVector*>* analystQuery):queue(analystQuery){}
+	Algorithm(TQueue<MultiVector*>* analystQuery):queue(analystQuery){}
 	virtual void __fastcall Invoke() = 0;
 }

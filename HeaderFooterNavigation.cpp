@@ -16,6 +16,8 @@ extern "C" int FMXmain()
 		Application->Initialize();
 		Application->CreateForm(__classid(THeaderFooterwithNavigation), &HeaderFooterwithNavigation);
 		Application->Run();
+		
+		
 	}
 	catch (Exception &exception)
 	{

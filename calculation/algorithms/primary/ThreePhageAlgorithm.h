@@ -47,7 +47,7 @@ class ThreePhageAlgorithm: public Algorithm{
 	int size_result;
 
 	public:
-	ThreePhageAlgorithm(TQueue<T>* analystQuery):Algorithm(analystQuery)
+	ThreePhageAlgorithm(TQueue<MultiVector*>* analystQuery):Algorithm(analystQuery)
 	{
 		fs = new TFileStream("temp.txt", fmCreate);
 		ConnectionFactory* factory = new ConnectionFactory();
@@ -155,8 +155,8 @@ class ThreePhageAlgorithm: public Algorithm{
 			thridPhaseOfStepDetected = false;
 			float moduleAcceleration = module(data[0], data[1], data[2]);
 			countStep++;
-			this->labelCountStepNumber->Text = Convert::ToString(countStep);
 			MultiVector* vector = new MultiVector(data[0], data[1], data[2], data[3], data[4], data[5], calculateLengthOfStep(moduleAcceleration));
+			analystQuery->Enqueue(vector);
 		}
 
 	}

@@ -2,6 +2,7 @@
 
 #pragma hdrstop
 
-#include "Connection.h"
+#include "Analyst.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+
